@@ -1,7 +1,6 @@
 server:
   port: 4001
 spring:
-  application.name: notes
   data:
     mongodb:
       host: mongodb

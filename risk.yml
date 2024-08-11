@@ -1,4 +1,3 @@
-spring.application.name: risk
 eureka:
   client:
     serviceUrl:
