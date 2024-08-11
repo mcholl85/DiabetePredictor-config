@@ -1,0 +1,17 @@
+server:
+  port: 4001
+spring:
+  application.name: notes
+  data:
+    mongodb:
+      host: mongodb
+      port: 27017
+      database: patients
+      username: user
+      password: password
+eureka:
+  client:
+    serviceUrl:
+      register-with-eureka: true
+      fetch-registry: true
+      defaultZone: http://eureka-server:8761/eureka/
