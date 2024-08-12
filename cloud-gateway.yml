@@ -24,6 +24,8 @@ spring:
           uri: http://patients:5001/
           predicates:
             - Path=/patients, /patients/{id}
+          filters:
+            - AddRequestHeader=Authorization,Basic cm9vdDpzM2NyM3Q=
         - id: note-get
           uri: http://notes:4001/
           predicates:
@@ -31,6 +33,7 @@ spring:
             - Method=GET
           filters:
             - RewritePath=/patients/(?<id>.*)/notes, /notes/patId/$\{id}
+            - AddRequestHeader=Authorization,Basic cm9vdDpzM2NyM3Q=
         - id: note-post
           uri: http://notes:4001/
           predicates:
@@ -38,12 +41,14 @@ spring:
             - Method=POST
           filters:
             - RewritePath=/patients/(?<id>.*)/notes, /notes
+            - AddRequestHeader=Authorization,Basic cm9vdDpzM2NyM3Q=
         - id: risk
           uri: http://risk:6001/
           predicates:
             - Path=/patients/{id}/risk
           filters:
             - RewritePath=/patients/(?<id>.*)/risk, /risk/$\{id}
+            - AddRequestHeader=Authorization,Basic cm9vdDpzM2NyM3Q=
 eureka:
   client:
     register-with-eureka: true

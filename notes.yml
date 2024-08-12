@@ -1,6 +1,10 @@
 server:
   port: 4001
 spring:
+  security:
+    user:
+      name: root
+      password: s3cr3t
   data:
     mongodb:
       host: mongodb

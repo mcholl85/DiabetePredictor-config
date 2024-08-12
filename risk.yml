@@ -4,6 +4,11 @@ eureka:
       register-with-eureka: true
       fetch-registry: true
       defaultZone: http://eureka-server:8761/eureka/
+spring:
+  security:
+    user:
+      name: root
+      password: s3cr3t
 medilabo:
   api:
     url: http://gateway:8080/
